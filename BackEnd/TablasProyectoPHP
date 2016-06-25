@@ -1,0 +1,11 @@
+Las siguientes son las tablas que estaran incluidas en el modelo:
+- Usuario
+- Persona (medico, cliente, empleado)
+- Citas
+- Detalle de CItas
+- Atencion Medica
+- Detalle Atencion Medica
+- Mestro de Medicamentos
+- Maestro de Diagnosticos
+- Perfil de usuario
+- Asginacion de medicos para atencion
