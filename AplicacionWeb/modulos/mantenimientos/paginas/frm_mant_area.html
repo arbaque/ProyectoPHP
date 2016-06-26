@@ -72,7 +72,7 @@
 					<ul class="nav navbar-right">
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
-							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"><?php echo $_SESSION['avpusr_name']; ?></span> <i class="clip-chevron-down"></i> </a>
+							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"></span> <i class="clip-chevron-down"></i> </a>
 							<ul class="dropdown-menu">
 								<li>
 									<a href="../../../logout.html"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
@@ -107,7 +107,7 @@
 						</li>
                         <!-- INICIO MANTENIMIENTOS -->
                         <li >
-							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.html"><i class="clip-wrench"></i>
+							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.html"><img src="../../../assets/images/mantenimiento.png" width="10" height="10">
 								<span class="title">Mantenimientos</span>
 								<span class="selected"></span>
 							</a>
@@ -313,10 +313,7 @@
                                 <!-- end: Modal -->
                                 
                                 <div class="table-responsive" id="grid">
-                                            <?php 
-                                                $grid = $obj_cls->MET_llenaGrid();
-                                                echo $grid;
-                                            ?>											
+                                            				
                                 </div>
                             </div>
                         </div>
