@@ -7,7 +7,7 @@
 	<!--<![endif]-->
 	<!-- start: HEAD --><head>
 <!-- InstanceBeginEditable name="EditRegionPHP" --> 
-<?php
+<?
 session_start();
 
 require_once('../../../clases_conexion/cls_seguridad.php');
@@ -135,8 +135,8 @@ $menu_seguridad="";
 								<span class="title"> Menú </span><span class="selected"></span>
 							</a>
 						</li>
-                        <!-- INICIO MANTENIMIENTOS -->
-                        <li <?php echo $menu_mantenimientos; ?>>
+                        <!-- INICIO DE LOS MANTENIMIENTOS -->
+                        <li>
 							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.php"><i class="clip-wrench"></i>
 								<span class="title">Mantenimientos</span>
 								<span class="selected"></span>
@@ -145,7 +145,7 @@ $menu_seguridad="";
                         <!-- FIN MANTENIMIENTOS -->
                         
                         <!-- INICIO AGENDAMIENTO -->
-                        <li <?php echo $menu_agendamiento; ?>>
+                        <li>
 							<a href="../../../menu/agendamiento/frm_menu_agendamiento.php"><i class="fa fa-calendar"></i>
 								<span class="title">Agendamiento</span>
 								<span class="selected"></span>
@@ -154,7 +154,7 @@ $menu_seguridad="";
                         <!-- FIN AGENDAMIENTO -->
                         
                         <!-- INICIO PACIENTE -->
-                        <li <?php echo $menu_paciente; ?>>
+                        <li>
 							<a href="../../../menu/paciente/frm_menu_paciente.php"><i class="clip-user-5"></i>
 								<span class="title">Paciente</span>
 								<span class="selected"></span>
@@ -163,7 +163,7 @@ $menu_seguridad="";
                         <!-- FIN PACIENTE -->
 
                         <!-- INICIO DOCTOR -->
-                        <li <?php echo $menu_doctor; ?>>
+                        <li>
 							<a href="../../../menu/doctor/frm_menu_doctor.php"><i class="fa fa-user-md"></i>
 								<span class="title">Doctor</span>
 								<span class="selected"></span>
@@ -172,7 +172,7 @@ $menu_seguridad="";
                         <!-- FIN DOCTOR -->
 
                         <!-- INICIO REPORTES -->
-                        <li <?php echo $menu_reportes; ?>>
+                        <li>
 							<a href="../../../menu/reportes/frm_menu_reportes.php"><i class="fa fa-clipboard"></i>
 								<span class="title">Consultas y Reportes</span>
 								<span class="selected"></span>
@@ -181,7 +181,7 @@ $menu_seguridad="";
                         <!-- FIN REPORTES -->
 
                         <!-- INICIO SEGURIDAD -->
-                        <li <?php echo $menu_seguridad; ?>>
+                        <li>
 							<a href="../../../menu/seguridad/frm_menu_seguridad.php"><i class="clip-key"></i>
 								<span class="title">Seguridad</span>
 								<span class="selected"></span>
@@ -343,7 +343,7 @@ $menu_seguridad="";
                                 <!-- end: Modal -->
                                 
                                 <div class="table-responsive" id="grid">
-                                            <?php 
+                                            <? 
                                                 $grid = $obj_cls->MET_llenaGrid();
                                                 echo $grid;
                                             ?>											
