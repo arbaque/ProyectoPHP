@@ -72,10 +72,10 @@
 					<ul class="nav navbar-right">
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
-							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"><?php echo $_SESSION['avpusr_name']; ?></span> <i class="clip-chevron-down"></i> </a>
+							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"></span> <i class="clip-chevron-down"></i> </a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="../../../logout.php"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
+									<a href="../../../logout.html"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
 								</li>
 							</ul>
 						</li>
@@ -100,13 +100,13 @@
 					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- start: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
-						<li <?php echo $menu_home; ?> >
+						<li>
 							<a href="../../home/frm_home.html"><i class="clip-home-3"></i>
 								<span class="title"> Menú </span><span class="selected"></span>
 							</a>
 						</li>
                         <!-- INICIO MANTENIMIENTOS -->
-                        <li <?php echo $menu_mantenimientos; ?>>
+                        <li>
 							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.html"><i class="clip-wrench"></i>
 								<span class="title">Mantenimientos</span>
 								<span class="selected"></span>
@@ -133,7 +133,7 @@
                         <!-- FIN PACIENTE -->
 
                         <!-- INICIO DOCTOR -->
-                        <li <?php echo $menu_doctor; ?>>
+                        <li>
 							<a href="../../../menu/doctor/frm_menu_doctor.html"><i class="fa fa-user-md"></i>
 								<span class="title">Doctor</span>
 								<span class="selected"></span>
