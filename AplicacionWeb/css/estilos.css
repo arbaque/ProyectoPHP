@@ -1,3 +1,7 @@
 ul.main-navigation-menu > li > a {
 	padding-left:4px;
 }
+
+.breadcrumb{
+	height: 51px;
+}
