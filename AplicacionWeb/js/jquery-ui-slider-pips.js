@@ -1,7 +1,3 @@
-/*! jQuery-ui-Slider-Pips - v1.11.1 - 2015-11-30
-* Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
-
-
 
 (function($) {
 
@@ -345,10 +341,6 @@
                     label = labelValue;
 
                 }
-
-
-
-
                 if ( which === "first" ) {
 
                     // first Pip on the Slider
@@ -557,13 +549,6 @@
 
 
         },
-
-
-
-
-
-
-
 
         // floats
 
