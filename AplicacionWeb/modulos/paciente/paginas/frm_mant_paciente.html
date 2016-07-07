@@ -64,7 +64,7 @@
 					<ul class="nav navbar-right">
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
-							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"><?php echo $_SESSION['avpusr_name']; ?></span> <i class="clip-chevron-down"></i> </a>
+							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"></span> <i class="clip-chevron-down"></i> </a>
 							<ul class="dropdown-menu">
 								<li>
 									<a href="../../../logout.html"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
@@ -313,11 +313,7 @@
                                                                             </label>
                                                                             <select id="cbx_genero" name="combo" class="form-control search-select">
                                                                              <option value='0' selected="selected" >Selecciona una Opción</option>
-                                                                                                            <?php 
-                                        $combo = $obj_met->MET_llena_combo("adm_genero", "id", "descripcion", "","descripcion");
-                                        echo $combo;
-                                  ?>
-                                                                                                        </select>
+                                                                                                                                                                        </select>
                                                                         </div>
                                                                         
                                                                         <div class="form-group">    
@@ -326,10 +322,7 @@
                                                                             </label>
                                                                             <select id="cbx_estado_civil" name="combo2" class="form-control search-select">
                                                                              <option value='0' selected="selected" >Selecciona una Opción</option>
-                                 <?php 
-   $combo = $obj_met->MET_llena_combo("adm_estado_civil", "id", "descripcion", "","descripcion");
-                                        echo $combo;
-                                  ?>
+                                
                                                                             </select>
                                                                         </div>
                                                                         
@@ -339,10 +332,7 @@
                                                                             </label>
                                                 <select id="cbx_instruccion" name="combo1" class="form-control search-select">                            
                                                  <option value='0' selected="selected" >Selecciona una Opción</option>
-                                                                                <?php 
-            $combo = $obj_met->MET_llena_combo("adm_instruccion", "id", "descripcion", "","descripcion");
-            echo $combo;
-      ?>
+                                                                                
                                                                             </select>
                                                                         </div>
                                                                         
@@ -358,10 +348,7 @@
                                                                             </label>
                                                                             <select id="cbx_tipo_sangre" name="combo3" class="form-control search-select">
 						<option value='0' selected="selected" >Selecciona una Opción</option>
-                    			<?php 
-           $combo = $obj_met->MET_llena_combo("adm_tipo_sangre", "id", "descripcion", "","descripcion");
-                                        echo $combo;
-                                  ?>
+                    			
                                                                             </select>
                                                                         </div>
                                                                         
@@ -416,10 +403,7 @@
                                                                             </label>
                                                 <select id="cbx_area" name="combo1" class="form-control search-select" onChange="carga_cargo_ajax(this.value, 0)">                            
                                                  <option value='0' selected="selected" >Selecciona una Opción</option>
-                                                                                <?php 
-            $combo = $obj_met->MET_llena_combo("adm_area", "id", "descripcion", "","descripcion");
-            echo $combo;
-      ?>
+                                                                                
                                                                             </select>
                                                                         </div>
                                                                              
@@ -500,10 +484,7 @@
                                 <!-- end: Modal -->
                                 
                                 <div class="table-responsive" id="grid">
-                                            <?php 
-                                                $grid = $obj_cls->MET_llenaGrid();
-                                                echo $grid;
-                                            ?>											
+                                           					
                                 </div>
                             </div>
                         </div>
