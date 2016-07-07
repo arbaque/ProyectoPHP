@@ -60,7 +60,7 @@
 					<ul class="nav navbar-right">
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
-							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"><?php echo $_SESSION['avpusr_name']; ?></span> <i class="clip-chevron-down"></i> </a>
+							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"></span> <i class="clip-chevron-down"></i> </a>
 							<ul class="dropdown-menu">
 								<li>
 									<a href="../../logout.html"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
@@ -193,15 +193,10 @@
 	<script src="../../assets/plugins/jquery-cookie/jquery.cookie.js"></script>
 	<script src="../../assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
 	<script src="../../assets/js/main.js"></script>
-		<!-- end: MAIN JAVASCRIPTS -->
-		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<!-- InstanceBeginEditable name="javascript" -->
-        	
-		<!-- InstanceEndEditable -->
-		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-        <!-- InstanceBeginEditable name="ready js" -->
+		
 	<script>
-			jQuery(document).ready(function() {
+//Inicializacion de Javascripts 			
+jQuery(document).ready(function() {
 				Main.init();				
 			});
 		</script>
