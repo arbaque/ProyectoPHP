@@ -5,7 +5,18 @@
 
     var extensionMethods = {
 
-
+canvasAgendar: function( settings ) {
+		var mycanvas=document.getElementById("canvas1");
+                var ctx=mycanvas.getContext('2d');        
+                
+                 //LETRA  
+                 ctx.font = "60px Arial";
+                ctx.fillStyle = "rgb(255, 0, 0)"
+                ctx.fillText("Anibal B.",50,150);//RELLENO
+                
+                ctx.font = "60px Arial";
+                ctx.strokeStyle = "blue";
+                ctx.strokeText("CANVAS",50,250);//BORDE
 
 
 
