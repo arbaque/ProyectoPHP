@@ -7,37 +7,11 @@
 	<!--<![endif]-->
 	<!-- start: HEAD --><head>
 <!-- InstanceBeginEditable name="EditRegionPHP" --> 
-<?
-session_start();
 
-require_once('../../../clases_conexion/cls_seguridad.php');
-$obj_seg = new Seguridad;
-
-if(!$obj_seg->MET_checkAcceso(0))
-{
-	echo"<script>window.location = '../../../login.php';</script>";
-	exit();
-}
-
-require_once('../clases_datos/cls_metodos_comunes.php');
-require_once('../clases_datos/cls_tipo_especialidad_datos.php');
-
-$obj_met = new Metodos_comunes;
-$obj_cls = new TipoEspecialidad_datos;
-
-$menu_home="";
-$menu_mantenimientos="class='active open'";
-$menu_agendamiento="";
-$menu_paciente="";
-$menu_doctor="";
-$menu_reportes="";
-$menu_seguridad="";
-
-?>
 <!-- InstanceEndEditable -->
 
 
-<title>DrClick || Software de Gestión del Médico || Powered by Itecnogest</title>
+<title>DrClick || Software de Gestión Médico || Powered by Itecnogest</title>
 <!-- start: META -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -49,8 +23,8 @@ $menu_seguridad="";
 <!-- end: META -->
 <!-- start: MAIN CSS -->
 <link rel="stylesheet" href="../../../assets/plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="../../../assets/plugins/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="../../../assets/fonts/style.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="fonts/style.css">
 <link rel="stylesheet" href="../../../assets/css/main.css">
 <link rel="stylesheet" href="../../../assets/css/main-responsive.css">
 <link rel="stylesheet" href="../../../assets/plugins/iCheck/skins/all.css">
@@ -58,6 +32,7 @@ $menu_seguridad="";
 <link rel="stylesheet" href="../../../assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
 <link rel="stylesheet" href="../../../assets/css/theme_light.css" type="text/css" id="skin_color">
 <link rel="stylesheet" href="../../../assets/css/print.css" type="text/css" media="print"/>
+<link rel="stylesheet" href="../../../css/estilos.css">
 <!--[if IE 7]>
 		<link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
@@ -94,7 +69,7 @@ $menu_seguridad="";
 					</button>
 					<!-- end: RESPONSIVE MENU TOGGLER -->
 					<!-- start: LOGO -->
-                        <img src="../../../assets/images/logo_drclick.png" width="100" height="49">
+                        <img src="../../../assets/images/logo_drclick.png" width="135" height="49">
                     <!-- end: LOGO -->
 			  </div>
 				<div class="navbar-tools">
@@ -102,7 +77,7 @@ $menu_seguridad="";
 					<ul class="nav navbar-right">
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
-							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"><?php echo $_SESSION['avpusr_name']; ?></span> <i class="clip-chevron-down"></i> </a>
+							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"> Juan Piguave</span> <i class="clip-chevron-down"></i> </a>
 							<ul class="dropdown-menu">
 								<li>
 									<a href="../../../logout.php"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
@@ -124,20 +99,19 @@ $menu_seguridad="";
 				<div class="main-navigation navbar-collapse collapse">
 					<!-- start: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
-						<i class="clip-chevron-left"></i>
-						<i class="clip-chevron-right"></i>
+						
 					</div>
 					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- start: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
 						<li>
-							<a href="../../home/frm_home.php"><i class="clip-home-3"></i>
+							<a href="../../../home.html"><i class="clip-home-3"></i>
 								<span class="title"> Menú </span><span class="selected"></span>
 							</a>
 						</li>
                         <!-- INICIO DE LOS MANTENIMIENTOS -->
                         <li>
-							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.php"><i class="clip-wrench"></i>
+							<a href="../../../menu/frm_menu_mantenimientos.html"><i class="clip-wrench"></i>
 								<span class="title">Mantenimientos</span>
 								<span class="selected"></span>
 							</a>
@@ -146,7 +120,7 @@ $menu_seguridad="";
                         
                         <!-- INICIO AGENDAMIENTO -->
                         <li>
-							<a href="../../../menu/agendamiento/frm_menu_agendamiento.php"><i class="fa fa-calendar"></i>
+							<a href="../../../menu/frm_menu_agendamiento.html"><i class="fa fa-calendar"></i>
 								<span class="title">Agendamiento</span>
 								<span class="selected"></span>
 							</a>
@@ -155,7 +129,7 @@ $menu_seguridad="";
                         
                         <!-- INICIO PACIENTE -->
                         <li>
-							<a href="../../../menu/paciente/frm_menu_paciente.php"><i class="clip-user-5"></i>
+							<a href="../../../menu/frm_menu_paciente.html"><i class="clip-user-5"></i>
 								<span class="title">Paciente</span>
 								<span class="selected"></span>
 							</a>
@@ -164,7 +138,7 @@ $menu_seguridad="";
 
                         <!-- INICIO DOCTOR -->
                         <li>
-							<a href="../../../menu/doctor/frm_menu_doctor.php"><i class="fa fa-user-md"></i>
+							<a href="../../../menu/frm_menu_doctor.html"><i class="fa fa-user-md"></i>
 								<span class="title">Doctor</span>
 								<span class="selected"></span>
 							</a>
@@ -173,7 +147,7 @@ $menu_seguridad="";
 
                         <!-- INICIO REPORTES -->
                         <li>
-							<a href="../../../menu/reportes/frm_menu_reportes.php"><i class="fa fa-clipboard"></i>
+							<a href="../../../menu/frm_menu_reportes.html"><i class="fa fa-clipboard"></i>
 								<span class="title">Consultas y Reportes</span>
 								<span class="selected"></span>
 							</a>
@@ -182,7 +156,7 @@ $menu_seguridad="";
 
                         <!-- INICIO SEGURIDAD -->
                         <li>
-							<a href="../../../menu/seguridad/frm_menu_seguridad.php"><i class="clip-key"></i>
+							<a href="#"><i class="clip-key"></i>
 								<span class="title">Seguridad</span>
 								<span class="selected"></span>
 							</a>
@@ -343,10 +317,7 @@ $menu_seguridad="";
                                 <!-- end: Modal -->
                                 
                                 <div class="table-responsive" id="grid">
-                                            <?php 
-                                                $grid = $obj_cls->MET_llenaGrid();
-                                                echo $grid;
-                                            ?>											
+                                            										
                                 </div>
                             </div>
                         </div>
@@ -362,11 +333,8 @@ $menu_seguridad="";
 		<!-- end: MAIN CONTAINER -->
 		<!-- start: FOOTER -->
 		<div class="footer clearfix">
-			<div class="footer-inner">
+			<div align="center">
 				2016 &copy; DrClick Todos los derechos reservados.
-			</div>
-			<div class="footer-items">
-				<span class="go-top"><i class="clip-chevron-up"></i></span>
 			</div>
 		</div>
 		<!-- end: FOOTER -->

@@ -23,8 +23,8 @@
 <!-- end: META -->
 <!-- start: MAIN CSS -->
 <link rel="stylesheet" href="../../../assets/plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="../../../assets/plugins/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="../../../assets/fonts/style.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="fonts/style.css">
 <link rel="stylesheet" href="../../../assets/css/main.css">
 <link rel="stylesheet" href="../../../assets/css/main-responsive.css">
 <link rel="stylesheet" href="../../../assets/plugins/iCheck/skins/all.css">
@@ -32,6 +32,7 @@
 <link rel="stylesheet" href="../../../assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
 <link rel="stylesheet" href="../../../assets/css/theme_light.css" type="text/css" id="skin_color">
 <link rel="stylesheet" href="../../../assets/css/print.css" type="text/css" media="print"/>
+<link rel="stylesheet" href="../../../css/estilos.css">
 <!--[if IE 7]>
 		<link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
@@ -69,7 +70,7 @@
 					</button>
 					<!-- end: RESPONSIVE MENU TOGGLER -->
 					<!-- start: LOGO -->
-                        <img src="../../../assets/images/logo_drclick.png" width="100" height="49">
+                        <img src="../../../assets/images/logo_drclick.png" width="135" height="49">
                     <!-- end: LOGO -->
 			  </div>
 				<div class="navbar-tools">
@@ -77,10 +78,10 @@
 					<ul class="nav navbar-right">
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
-							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"></span> </a>
+							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"> Juan Piguave</span> <i class="clip-chevron-down"></i> </a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="../../../logout.php"> <img src="../../../assets/images/cerrar.png" width="30" height="30">&nbsp;Cerrar Sesión </a>
+									<a href="#"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
 								</li>
 							</ul>
 						</li>
@@ -99,20 +100,19 @@
 				<div class="main-navigation navbar-collapse collapse">
 					<!-- start: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
-						<i class="clip-chevron-left"></i>
-						<i class="clip-chevron-right"></i>
+						
 					</div>
 					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- start: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
 						<li>
-							<a href="../../home/frm_home.php"><img src="../../../assets/images/home.png" width="30" height="30">
+							<a href="../../../home.html"><i class="clip-home-3"></i>
 								<span class="title"> Menú </span><span class="selected"></span>
 							</a>
 						</li>
                         <!-- INICIO MANTENIMIENTOS -->
                         <li>
-							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.php"><img src="../../../assets/images/mantenimiento.png" width="30" height="30">
+							<a href="../../../menu/frm_menu_mantenimientos.html"><i class="clip-wrench"></i>
 								<span class="title">Mantenimientos</span>
 								<span class="selected"></span>
 							</a>
@@ -121,7 +121,7 @@
                         
                         <!-- INICIO AGENDAMIENTO -->
                         <li>
-							<a href="../../../menu/agendamiento/frm_menu_agendamiento.php"><img src="../../../assets/images/agenda.png" width="30" height="30">
+							<a href="../../../menu/frm_menu_agendamiento.html"><i class="fa fa-calendar"></i>
 								<span class="title">Agendamiento</span>
 								<span class="selected"></span>
 							</a>
@@ -130,7 +130,7 @@
                         
                         <!-- INICIO PACIENTE -->
                         <li>
-							<a href="../../../menu/paciente/frm_menu_paciente.php"><img src="../../../assets/images/paciente.png" width="30" height="30">
+							<a href="../../../menu/frm_menu_paciente.html"><i class="clip-user-5"></i>
 								<span class="title">Paciente</span>
 								<span class="selected"></span>
 							</a>
@@ -139,7 +139,7 @@
 
                         <!-- INICIO DOCTOR -->
                         <li>
-							<a href="../../../menu/doctor/frm_menu_doctor.php"><img src="../../../assets/images/doctor.png" width="30" height="30">
+							<a href="../../../menu/frm_menu_doctor.html"><i class="fa fa-user-md"></i>
 								<span class="title">Doctor</span>
 								<span class="selected"></span>
 							</a>
@@ -148,8 +148,8 @@
 
                         <!-- INICIO REPORTES -->
                         <li>
-							<a href="../../../menu/reportes/frm_menu_reportes.php"><img src="../../../assets/images/reportes.png" width="30" height="30">
-								<span class="title">Consultas/Reportes</span>
+							<a href="../../../menu/frm_menu_reportes.html"><i class="fa fa-clipboard"></i>
+								<span class="title">Consultas y Reportes</span>
 								<span class="selected"></span>
 							</a>
 						</li>
@@ -157,7 +157,7 @@
 
                         <!-- INICIO SEGURIDAD -->
                         <li>
-							<a href="../../../menu/seguridad/frm_menu_seguridad.php"><img src="../../../assets/images/seguridad.png" width="30" height="30">
+							<a href="#"><i class="clip-key"></i>
 								<span class="title">Seguridad</span>
 								<span class="selected"></span>
 							</a>
@@ -409,7 +409,7 @@
 		<script src="../../../assets/js/form-elements.js"></script>
     			
 		<script type="text/javascript" src="../../../js/valida_cedula.js"></script>
-        <script type="text/javascript" src="../js/ajax_tipo_sangre.js"></script>	
+        <script type="text/javascript" src="../../../js/ajax_tipo_sangre.js"></script>	
 		<!-- InstanceEndEditable -->
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <!-- InstanceBeginEditable name="ready js" -->
