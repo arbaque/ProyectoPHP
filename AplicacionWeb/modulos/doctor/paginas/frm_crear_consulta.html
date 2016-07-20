@@ -1,46 +1,6 @@
 
-<!DOCTYPE "HTML 4.01 Transitional EN" "http://www.w3.org/">
-<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
-<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
-<!--[if !IE]><!-->
-<html lang="en" class="no-js"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
-	<!--<![endif]-->
-	<!-- start: HEAD --><head>
-<!-- InstanceBeginEditable name="EditRegionPHP" -->
-<?php
-session_start();
 
-require_once('../../../clases_conexion/cls_seguridad.php');
-$obj_seg = new Seguridad;
-
-if(!$obj_seg->MET_checkAcceso(0))
-{
-	echo"<script>window.location = '../../../login.php';</script>";
-	exit();
-}
-
-require_once('../clases_datos/cls_metodos_comunes.php');
-require_once('../clases_datos/cls_enfcronica_datos.php');
-
-$obj_met = new Metodos_comunes;
-$obj_cls = new Enfcronica_datos;
-
-$menu_home="";
-$menu_mantenimientos="";
-$menu_agendamiento="";
-$menu_paciente="class='active open'";
-$menu_doctor="";
-$menu_reportes="";
-$menu_seguridad="";
-	
-$id_paciente=0;
-
-if(isset($_REQUEST['txt_id'])){
-	$id_paciente=$_REQUEST['txt_id'];
-}
-
-?>
-<!-- InstanceEndEditable -->
+<html lang="en" class="no-js"><head>
 
 
 <title>DrClick || Software de Gestión Médico || Powered by Itecnogest</title>
@@ -64,12 +24,7 @@ if(isset($_REQUEST['txt_id'])){
 <link rel="stylesheet" href="../../../assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
 <link rel="stylesheet" href="../../../assets/css/theme_light.css" type="text/css" id="skin_color">
 <link rel="stylesheet" href="../../../assets/css/print.css" type="text/css" media="print"/>
-<!--[if IE 7]>
-		<link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome-ie7.min.css">
-		<![endif]-->
-<!-- end: MAIN CSS -->
-<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-<!-- InstanceBeginEditable name="css" -->
+
 <link rel="stylesheet" href="../../../assets/plugins/ladda-bootstrap/dist/ladda-themeless.min.css">
 <link rel="stylesheet" href="../../../assets/plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
 <link rel="stylesheet" href="../../../assets/plugins/bootstrap-social-buttons/social-buttons-3.css">
@@ -87,6 +42,7 @@ if(isset($_REQUEST['txt_id'])){
 
 <link rel="stylesheet" type="text/css" href="../../../css/slider/jquery-ui-slider-pips.css">
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+
 <!-- InstanceEndEditable -->
 <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 <!-- start: FAVICON PAGE -->
@@ -117,10 +73,10 @@ if(isset($_REQUEST['txt_id'])){
 					<ul class="nav navbar-right">
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
-							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"><?php echo $_SESSION['avpusr_name']; ?></span> <i class="clip-chevron-down"></i> </a>
+							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"></span> <i class="clip-chevron-down"></i> </a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="../../../logout.php"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
+									<a href="../../../logout.html"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
 								</li>
 							</ul>
 						</li>
@@ -145,14 +101,14 @@ if(isset($_REQUEST['txt_id'])){
 					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- start: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
-						<li <?php echo $menu_home; ?> >
-							<a href="../../home/frm_home.php"><i class="clip-home-3"></i>
+						<li  >
+							<a href="../../home/frm_home.html"><i class="clip-home-3"></i>
 								<span class="title"> Menú </span><span class="selected"></span>
 							</a>
 						</li>
                         <!-- INICIO MANTENIMIENTOS -->
-                        <li <?php echo $menu_mantenimientos; ?>>
-							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.php"><i class="clip-wrench"></i>
+                        <li >
+							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.html"><i class="clip-wrench"></i>
 								<span class="title">Mantenimientos</span>
 								<span class="selected"></span>
 							</a>
@@ -160,8 +116,8 @@ if(isset($_REQUEST['txt_id'])){
                         <!-- FIN MANTENIMIENTOS -->
                         
                         <!-- INICIO AGENDAMIENTO -->
-                        <li <?php echo $menu_agendamiento; ?>>
-							<a href="../../../menu/agendamiento/frm_menu_agendamiento.php"><i class="fa fa-calendar"></i>
+                        <li >
+							<a href="../../../menu/agendamiento/frm_menu_agendamiento.html"><i class="fa fa-calendar"></i>
 								<span class="title">Agendamiento</span>
 								<span class="selected"></span>
 							</a>
@@ -169,8 +125,8 @@ if(isset($_REQUEST['txt_id'])){
                         <!-- FIN AGENDAMIENTO -->
                         
                         <!-- INICIO PACIENTE -->
-                        <li <?php echo $menu_paciente; ?>>
-							<a href="../../../menu/paciente/frm_menu_paciente.php"><i class="clip-user-5"></i>
+                        <li >
+							<a href="../../../menu/paciente/frm_menu_paciente.html"><i class="clip-user-5"></i>
 								<span class="title">Paciente</span>
 								<span class="selected"></span>
 							</a>
@@ -178,8 +134,8 @@ if(isset($_REQUEST['txt_id'])){
                         <!-- FIN PACIENTE -->
 
                         <!-- INICIO DOCTOR -->
-                        <li <?php echo $menu_doctor; ?>>
-							<a href="../../../menu/doctor/frm_menu_doctor.php"><i class="fa fa-user-md"></i>
+                        <li >
+							<a href="../../../menu/doctor/frm_menu_doctor.html"><i class="fa fa-user-md"></i>
 								<span class="title">Doctor</span>
 								<span class="selected"></span>
 							</a>
@@ -187,8 +143,8 @@ if(isset($_REQUEST['txt_id'])){
                         <!-- FIN DOCTOR -->
 
                         <!-- INICIO REPORTES -->
-                        <li <?php echo $menu_reportes; ?>>
-							<a href="../../../menu/reportes/frm_menu_reportes.php"><i class="fa fa-clipboard"></i>
+                        <li>
+							<a href="../../../menu/reportes/frm_menu_reportes.html"><i class="fa fa-clipboard"></i>
 								<span class="title">Consultas y Reportes</span>
 								<span class="selected"></span>
 							</a>
@@ -196,8 +152,8 @@ if(isset($_REQUEST['txt_id'])){
                         <!-- FIN REPORTES -->
 
                         <!-- INICIO SEGURIDAD -->
-                        <li <?php echo $menu_seguridad; ?>>
-							<a href="../../../menu/seguridad/frm_menu_seguridad.php"><i class="clip-key"></i>
+                        <li >
+							<a href="../../../menu/seguridad/frm_menu_seguridad.html"><i class="clip-key"></i>
 								<span class="title">Seguridad</span>
 								<span class="selected"></span>
 							</a>
@@ -220,14 +176,14 @@ if(isset($_REQUEST['txt_id'])){
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-user-md"></i>
-                                <a href="#"> Paciente </a>
+                                <a href="#"> Doctor </a>
                             </li>
                             <li class="active">
-                               Enfermedades Crónicas
+                                Crear Consulta
                             </li>
                         </ol>
                         <div class="page-header">
-                            <h1> Enfermedades Crónicas </h1>
+                            <h1> Crear Consulta </h1>
                         </div>
                         <!-- end: PAGE TITLE & BREADCRUMB -->
                     	</div>
@@ -242,15 +198,12 @@ if(isset($_REQUEST['txt_id'])){
                                		<div class="row">
                                     	<div class="col-md-12">
                                               <h2><i class="fa fa-pencil-square teal">
-                                              	</i> Enfermedades Crónicas</h2>
+                                              	</i> Enfermedades </h2>
                                               <hr>
                                               <div class="row">
                                               	<div class="col-md-12">
                                                   	<div class="table-responsive" id="grid">
-													  	<?php 
-                                                          $grid = $obj_cls->MET_llenaGridConsultaEnfermedad();
-                                                          echo $grid;
-                                                      	?>											
+													  											
                                                   	</div>
                                                  </div>
                                               </div>
@@ -277,20 +230,25 @@ if(isset($_REQUEST['txt_id'])){
                      </div>
                           </div>
                      </div>
-                    
+                     <!-- end: Modal -->
                     <!-- start: PAGE CONTENT -->
 					<div class="row" style="width:95%; margin-left:2.5%">
 						<div class="col-sm-12">
 							<div class="tabbable">
 								<ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
-								    <li class="active">
+									<li class="active">
+										<a data-toggle="tab" href="#panel_datos_consulta">
+											Datos de la Consulta
+										</a>
+									</li>
+                                    <li>
 										<a data-toggle="tab" href="#panel_datos_paciente">
 											Datos del Paciente
 										</a>
 									</li>
 									<li>
 										<a data-toggle="tab" href="#panel_enfermedades">
-											Enfermedades Crónicas 
+											Enfermedades
 										</a>
 									</li>
 								</ul>
@@ -314,8 +272,108 @@ if(isset($_REQUEST['txt_id'])){
                                            </div>
                                         </div>
                                     
-                                                                                                              
-									<div id="panel_datos_paciente" class="tab-pane in active">
+                                    <div id="panel_datos_consulta" class="tab-pane in active">
+                                    	<div class="panel panel-default">
+											<div class="panel-body">
+												<div class="space12">
+                                    	            <div class="form-group">
+                                                    	<div class="row">
+                                                  			<div class="col-md-6">
+                                                            	<div class="row">
+                                                                     <div class="col-md-5">
+                                                                        <div class="form-group">
+                                                                            <label class="control-label">
+                                                                                Código:
+                                                                            </label>
+                                                                            <input type="text" class="form-control" id="txt_cod_consulta" name="txt_cod_consulta" disabled>
+                                                                        </div>
+                                                                     </div>
+                                                                </div>
+                                                                
+                                                                <div class="form-group">    
+                                                                    <label class="control-label">
+                                                                        Doctor: <span class="symbol required"></span>
+                                                                    </label>
+                                                <select id="cbx_doctor" name="combo" class="form-control search-select">
+                                                       <option value='0' selected="selected" >Selecciona una Opción</option>
+                                  
+                                                                    </select>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
+                                                            <div class="col-md-6">
+                                                            	<div class="row">
+                                                                     <div class="col-md-5">
+                                                                            <div class="form-group">
+                                                                                                <label for="form-field-mask-1">
+                                                                                                    Fecha: <span class="symbol required"> </span>
+                                                                                                </label>
+                                                                                                <div class="input-group">
+                                                <input id="txt_fecha" type="text" data-date-format="dd-mm-yyyy" data-date-viewmode="years" name="fecha_entrada" class="form-control date-picker" value="" readonly>
+                                                <span class="input-group-addon"> <i class="fa fa-calendar"></i> </span>
+                                            </div>
+                                                                                            </div>
+                                                                     </div>                                                                 </div>    
+                                                                     
+                                                                 <div class="row">    	
+                                                                      <div class="col-md-5">
+                                                                            <div class="form-group">
+                                                                                        <label for="form-field-mask-1">
+                                                                                            Hora: <span class="symbol required"> </span>
+                                                                                        </label>
+                                                                                       <div class="input-group input-append bootstrap-timepicker">
+										<input type="text" name="hora" class="form-control time-picker" id="txt_hora" value="" readonly>
+										<span class="input-group-addon add-on"><i class="fa fa-clock-o"></i></span>
+									</div>
+                                                                                    </div>
+                                                                      </div> 
+                                                                 </div>           
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                        <div class="row">
+            												<div class="col-md-12">
+                                           						<div class="form-group">
+                                           							<label for="form-field-mask-2">
+                                                       					Motivo de la Consulta: <span class="symbol required">
+                                                    				</label>
+                                    							<textarea name="motivo" id="txt_motivo" rows="5" data-original-title="Motivo" class="form-control tooltips"></textarea>
+                                    							</div>
+                                                			</div>
+                                                        </div>
+                                                		
+                                                        <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div>
+                                                                                <span class="symbol required"></span> Campos Requeridos
+                                                                                <hr>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                                                                                        
+                                                                    <div class="row">
+                                                                        <div class="modal-footer">
+                                                                            <button aria-hidden="true" data-dismiss="modal" class="btn btn-default" onClick="limpiar_form1();">
+                                                                                Cancelar
+           
+                                                                            </button>
+                                                                            
+           <button id="btn_guardar_ordentrabajo" class="btn btn-default" type="submit">
+                  Guardar<i class="fa fa-arrow-circle-right"></i>
+          </button>
+          
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                    </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                            
+									<div id="panel_datos_paciente" class="tab-pane">
                                     	<div class="panel panel-default">
 											<div class="panel-body">
 												<div class="space12">
@@ -375,10 +433,7 @@ if(isset($_REQUEST['txt_id'])){
                                                                             </label>
                                                                             <select id="cbx_genero" name="combo" class="form-control search-select">
                                                                              <option value='0' selected="selected" >Selecciona una Opción</option>
-                                                                                                            <?php 
-                                        $combo = $obj_met->MET_llena_combo("adm_genero", "id", "descripcion", "","descripcion");
-                                        echo $combo;
-                                  ?>
+                                                                                                            
                                                                                                         </select>
                                                                         </div>
                                                                         
@@ -388,14 +443,19 @@ if(isset($_REQUEST['txt_id'])){
                                                                             </label>
                                                                             <select id="cbx_estado_civil" name="combo2" class="form-control search-select">
                                                                              <option value='0' selected="selected" >Selecciona una Opción</option>
-                                 <?php 
-   $combo = $obj_met->MET_llena_combo("adm_estado_civil", "id", "descripcion", "","descripcion");
-                                        echo $combo;
-                                  ?>
+                                
                                                                             </select>
                                                                         </div>
                                                                         
-                                                                        
+                                                                        <div class="form-group">    
+                                                                             <label class="control-label">
+                                                                                Instrucción: <span class="symbol required"></span>
+                                                                            </label>
+                                                                            <select id="cbx_instruccion" name="combo2" class="form-control search-select">
+                                                                             <option value='0' selected="selected" >Selecciona una Opción</option>
+                                 
+                                                                            </select>
+                                                                        </div>
                                                                         
                                                                  </div>
                                                                     
@@ -409,10 +469,7 @@ if(isset($_REQUEST['txt_id'])){
                                                                             </label>
                                                                             <select id="cbx_tipo_sangre" name="combo3" class="form-control search-select">
 						<option value='0' selected="selected" >Selecciona una Opción</option>
-                    			<?php 
-           $combo = $obj_met->MET_llena_combo("adm_tipo_sangre", "id", "descripcion", "","descripcion");
-                                        echo $combo;
-                                  ?>
+                    			
                                                                             </select>
                                                                         </div>
                                                                         
@@ -467,10 +524,7 @@ if(isset($_REQUEST['txt_id'])){
                                                                             </label>
                                                 <select id="cbx_area" name="combo1" class="form-control search-select" onChange="carga_cargo_ajax(this.value, 0)">                            
                                                  <option value='0' selected="selected" >Selecciona una Opción</option>
-                                                                                <?php 
-            $combo = $obj_met->MET_llena_combo("adm_area", "id", "descripcion", "","descripcion");
-            echo $combo;
-      ?>
+                                                                                
                                                                             </select>
                                                                         </div>
                                                                              
@@ -503,8 +557,10 @@ if(isset($_REQUEST['txt_id'])){
                     <input type="checkbox" id="chk_tercera_edad" name "chk_3" value="1" class="grey" disabled>
                                                                                Tercera Edad 
                                                                             </label>
-                
-                                            
+                                                                            <label class="checkbox-inline">
+					<input type="checkbox" value="" name="chk_4" class="grey" id="chk_afiliado">
+																					Afiliado
+																				</label>
                                                                             
                                                                         </div>
                                                      <div class="form-group" id="slide_discapacidad">
@@ -524,21 +580,6 @@ if(isset($_REQUEST['txt_id'])){
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                
-                                                                <div class="row">
-                                                                        <div class="modal-footer">
-                                                                            <button aria-hidden="true" data-dismiss="modal" class="btn btn-default" onClick="limpiar_form1();">
-                                                                                Cancelar
-           
-                                                                            </button>
-                                                                            
-           <button id="btn_guardar_ordentrabajo" class="btn btn-default" type="submit">
-                  Guardar<i class="fa fa-arrow-circle-right"></i>
-          </button>
-          
-                                                                        </div>
-                                                                    </div>
-                                                                    
                                                        </div>
                                                   </div>
                                               </div>
@@ -649,7 +690,7 @@ if(isset($_REQUEST['txt_id'])){
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- InstanceBeginEditable name="javascript" -->
-		<script src="../../../assets/plugins/ladda-bootstrap/dist/spin.min.js"></script>
+        <script src="../../../assets/plugins/ladda-bootstrap/dist/spin.min.js"></script>
         <script src="../../../assets/plugins/ladda-bootstrap/dist/ladda.min.js"></script>
         <script src="../../../assets/plugins/bootstrap-switch/static/js/bootstrap-switch.min.js"></script>
         <script src="../../../assets/js/ui-buttons.js"></script>
@@ -696,30 +737,20 @@ if(isset($_REQUEST['txt_id'])){
 		<script src="../../../assets/plugins/ckeditor/adapters/jquery.js"></script>
 		<script src="../../../assets/js/form-elements.js"></script>
     
-		<script src="../../../assets/js/consulta_permisos.js"></script>  
- 		 <script type="text/javascript" src="../js/ajax_enfcronica.js"></script>	
+		<script src="../../../assets/js/consulta_detalles.js"></script>
+  
+ 		 <script type="text/javascript" src="../js/ajax_consulta.js"></script>		
 		<!-- InstanceEndEditable -->
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <!-- InstanceBeginEditable name="ready js" -->
 	<script>
-			jQuery(document).ready(function() {
-				Main.init();
-				FormElements.init();
-				FormValidator.init();
-				TableExport.init();	
-			});
 			
-			var id_paciente=<?php echo $id_paciente; ?>;
-		
-			if(id_paciente!==0){
-				consultar_registro_paciente(id_paciente);	
-				carga_grid_detalle_ajax(id_paciente);		
-			}
-						
+			
 		</script>
-
+        
 	<!-- InstanceEndEditable -->
 </body>
 	<!-- end: BODY -->
 
 <!-- InstanceEnd --></html>
+          

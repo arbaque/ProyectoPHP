@@ -1,43 +1,7 @@
 
-<!DOCTYPE "HTML 4.01 Transitional EN" "http://www.w3.org/">
-<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
-<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
-<!--[if !IE]><!-->
-<html lang="en" class="no-js"><!-- InstanceBegin template="/Templates/template.dwt.php" codeOutsideHTMLIsLocked="false" -->
-	<!--<![endif]-->
-	<!-- start: HEAD --><head>
-<!-- InstanceBeginEditable name="EditRegionPHP" -->
-<?php
-session_start();
 
-require_once('../../../clases_conexion/cls_seguridad.php');
-$obj_seg = new Seguridad;
-
-if(!$obj_seg->MET_checkAcceso(0))
-{
-	echo"<script>window.location = '../../../login.php';</script>";
-	exit();
-}
-
-require_once('../clases_datos/cls_metodos_comunes.php');
-require_once('../clases_datos/cls_consulta_datos.php');
-
-$obj_met = new Metodos_comunes;
-$obj_cls = new Consulta_datos;
-
-$menu_home="";
-$menu_mantenimientos="";
-$menu_agendamiento="";
-$menu_paciente="class='active open'";
-$menu_doctor="";
-$menu_reportes="";
-$menu_seguridad="";
-
-?>
-<!-- InstanceEndEditable -->
-
-
-<title>DrClick || Software de Gestión Médico || Powered by Itecnogest</title>
+<html lang="en" class="no-js">
+<title>DrClick || Software de Gestión Médico || Powered by Grupo 2</title>
 <!-- start: META -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -108,10 +72,10 @@ $menu_seguridad="";
 					<ul class="nav navbar-right">
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
-							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"><?php echo $_SESSION['avpusr_name']; ?></span> <i class="clip-chevron-down"></i> </a>
+							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#"> <img src="../../../assets/images/drclick.jpg" class="circle-img" alt=""> <span class="username"></span> <i class="clip-chevron-down"></i> </a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="../../../logout.php"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
+									<a href="../../../logout.html"> <i class="clip-exit"></i> &nbsp;Cerrar Sesión </a>
 								</li>
 							</ul>
 						</li>
@@ -136,14 +100,14 @@ $menu_seguridad="";
 					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- start: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
-						<li <?php echo $menu_home; ?> >
-							<a href="../../home/frm_home.php"><i class="clip-home-3"></i>
+						<li  >
+							<a href="../../home/frm_home.html"><i class="clip-home-3"></i>
 								<span class="title"> Menú </span><span class="selected"></span>
 							</a>
 						</li>
                         <!-- INICIO MANTENIMIENTOS -->
-                        <li <?php echo $menu_mantenimientos; ?>>
-							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.php"><i class="clip-wrench"></i>
+                        <li >
+							<a href="../../../menu/mantenimientos/frm_menu_mantenimientos.html"><i class="clip-wrench"></i>
 								<span class="title">Mantenimientos</span>
 								<span class="selected"></span>
 							</a>
@@ -151,8 +115,8 @@ $menu_seguridad="";
                         <!-- FIN MANTENIMIENTOS -->
                         
                         <!-- INICIO AGENDAMIENTO -->
-                        <li <?php echo $menu_agendamiento; ?>>
-							<a href="../../../menu/agendamiento/frm_menu_agendamiento.php"><i class="fa fa-calendar"></i>
+                        <li >
+							<a href="../../../menu/agendamiento/frm_menu_agendamiento.html"><i class="fa fa-calendar"></i>
 								<span class="title">Agendamiento</span>
 								<span class="selected"></span>
 							</a>
@@ -160,8 +124,8 @@ $menu_seguridad="";
                         <!-- FIN AGENDAMIENTO -->
                         
                         <!-- INICIO PACIENTE -->
-                        <li <?php echo $menu_paciente; ?>>
-							<a href="../../../menu/paciente/frm_menu_paciente.php"><i class="clip-user-5"></i>
+                        <li >
+							<a href="../../../menu/paciente/frm_menu_paciente.html"><i class="clip-user-5"></i>
 								<span class="title">Paciente</span>
 								<span class="selected"></span>
 							</a>
@@ -169,8 +133,8 @@ $menu_seguridad="";
                         <!-- FIN PACIENTE -->
 
                         <!-- INICIO DOCTOR -->
-                        <li <?php echo $menu_doctor; ?>>
-							<a href="../../../menu/doctor/frm_menu_doctor.php"><i class="fa fa-user-md"></i>
+                        <li >
+							<a href="../../../menu/doctor/frm_menu_doctor.html"><i class="fa fa-user-md"></i>
 								<span class="title">Doctor</span>
 								<span class="selected"></span>
 							</a>
@@ -178,8 +142,8 @@ $menu_seguridad="";
                         <!-- FIN DOCTOR -->
 
                         <!-- INICIO REPORTES -->
-                        <li <?php echo $menu_reportes; ?>>
-							<a href="../../../menu/reportes/frm_menu_reportes.php"><i class="fa fa-clipboard"></i>
+                        <li >
+							<a href="../../../menu/reportes/frm_menu_reportes.html"><i class="fa fa-clipboard"></i>
 								<span class="title">Consultas y Reportes</span>
 								<span class="selected"></span>
 							</a>
@@ -187,8 +151,8 @@ $menu_seguridad="";
                         <!-- FIN REPORTES -->
 
                         <!-- INICIO SEGURIDAD -->
-                        <li <?php echo $menu_seguridad; ?>>
-							<a href="../../../menu/seguridad/frm_menu_seguridad.php"><i class="clip-key"></i>
+                        <li >
+							<a href="../../../menu/seguridad/frm_menu_seguridad.html"><i class="clip-key"></i>
 								<span class="title">Seguridad</span>
 								<span class="selected"></span>
 							</a>
@@ -214,7 +178,7 @@ $menu_seguridad="";
                                 <a href="#"> Paciente </a>
                             </li>
                             <li class="active">
-                               Historial
+                                Permisos
                             </li>
                         </ol>
                         <div class="page-header">
@@ -271,13 +235,10 @@ $menu_seguridad="";
 										</div>
 									</div>
                                     
-                                    <form action="frm_crear_consulta.php" role="form" id="form" method="post">
-                                    <input id="txt_id_consulta" name="txt_id_consulta" type="hidden" value="">
+                                    <form action="frm_permisos_paciente.html" role="form" id="form" method="post">
+                                    <input id="txt_id" name="txt_id" type="hidden" value="">
 									<div class="table-responsive" id="grid">
-										    	<?php 
-	  												$grid = $obj_cls->MET_llenaGrid();
-													echo $grid;
-	  											?>											
+										    												
 									</div>
                                     </form>
 								</div>
@@ -324,7 +285,7 @@ $menu_seguridad="";
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- InstanceBeginEditable name="javascript" -->
-<script type="text/javascript" src="../../../assets/plugins/select2/select2.min.js"></script>
+		<script type="text/javascript" src="../../../assets/plugins/select2/select2.min.js"></script>
 		
         <script src="../../../assets/plugins/bootbox/bootbox.min.js"></script>
 		<script type="text/javascript" src="../../../assets/plugins/jquery-mockjax/jquery.mockjax.js"></script>
@@ -366,8 +327,6 @@ $menu_seguridad="";
 		<script src="../../../assets/plugins/ckeditor/ckeditor.js"></script>
 		<script src="../../../assets/plugins/ckeditor/adapters/jquery.js"></script>
 		<script src="../../../assets/js/form-elements.js"></script>
-        
-        <script type="text/javascript" src="../js/ajas_historial.js"></script>	
 		<!-- InstanceEndEditable -->
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <!-- InstanceBeginEditable name="ready js" -->
